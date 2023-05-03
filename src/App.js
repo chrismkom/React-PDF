@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Paper, Box } from "@material-ui/core";
 
-function App() {
+const PDFViewer = ({ url }) => {
+  return (
+    <Box mt={2} mb={2}>
+      <Paper elevation={3}>
+        <iframe src={url} style={{ height: 900, width: 900 }}></iframe>
+      </Paper>
+    </Box>
+  );
+};
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PDFViewer url="https://mkdocs-201908.s3.sa-east-1.amazonaws.com:443/514/production/3ea6a8fb63f1f4798c5623794dafce68_514/production/PESQUISAINTERNAMKOMBET-NOVEMBERMKOM.pdf" />
     </div>
   );
-}
+};
 
 export default App;
